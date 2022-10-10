@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 
 public class HumanPlayer implements Player{
-    private final Logger logger=new LoggerFactory().getLogger("player");
+    private final Logger logger=new LoggerFactory().getLogger(new ConsoleLogger(),"HumanPlayer");
 
     public long askNextGuess(){
         logger.log("Try to guess the number; it's between 0-100");

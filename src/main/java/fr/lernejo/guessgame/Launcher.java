@@ -41,8 +41,8 @@ public class Launcher {
         }
 
         else{
-            System.out.print("Type <<javac Launcher.java -interactive>> to launch interactif mode");
-            System.out.print(" and <<javac Launcher.java -auto NumberToGuess>> to choose the Guess number");
+            System.out.print("Type <<javac -cp target/classes fr.lernejo.guessgame.Launcher -interactive>> to launch interactif mode");
+            System.out.print(" and <<javac -cp target/classes fr.lernejo.guessgame.Launcher -auto NumberToGuess>> to choose the Guess number");
         }
         /*Trouver la bonne syntaxe pour éxecuter le code*/
     }
