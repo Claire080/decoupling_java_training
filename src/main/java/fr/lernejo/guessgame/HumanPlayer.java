@@ -5,13 +5,13 @@ import java.util.Scanner;
 
 
 public class HumanPlayer implements Player{
-    private final Logger logger=new LoggerFactory().getLogger(new ConsoleLogger(),"HumanPlayer");
+    private final Logger logger=new LoggerFactory().getLogger("HumanPlayer");
 
     public long askNextGuess(){
         logger.log("Try to guess the number; it's between 0-100");
         Scanner scanner = new Scanner(System.in);
         //long number=scanner.nextLong();
-        //logger.log(""+number);
+        //logger.txt(""+number);
         return scanner.nextLong();
     }
 
