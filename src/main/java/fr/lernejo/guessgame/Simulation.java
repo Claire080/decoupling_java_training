@@ -1,6 +1,7 @@
 package fr.lernejo.guessgame;
 import fr.lernejo.logger.*;
-
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public class Simulation {
 
@@ -38,10 +39,28 @@ public class Simulation {
         return false;
     }
 
-    public void loopUntilPlayerSucceed() {
+    public void loopUntilPlayerSucceed(long maxI) {
+        Long currentStartTime = System.currentTimeMillis();
         boolean round=false;
-        while(!round){
+
+        while(maxI!=0){
+
+            if(round){
+                break;
+            }
             round=nextRound();
+            maxI--;
         }
+
+        if(maxI==0){
+            logger.log("You have exhausted all your attempts! END OF THE PART!!!");
+        }
+
+        Long currentEndTime = System.currentTimeMillis();
+        Long currentTime = currentEndTime - currentStartTime;
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("mm:ss:SS");
+        Date date = new Date(currentTime);
+        String time = simpleDateFormat.format(date);
+        System.out.println("This part takes:"+time);
     }
 }
