@@ -1,5 +1,7 @@
 package fr.lernejo.logger;
 import java.util.function.Predicate;
+import java.util.Optional;
+
 
 public class FilteredLogger implements Logger{
 
@@ -12,6 +14,8 @@ public class FilteredLogger implements Logger{
     }
 
     public void log(String message){
-        
+        if(condition.test(message)){
+            logger.log(message);
+        }
     }
 }
